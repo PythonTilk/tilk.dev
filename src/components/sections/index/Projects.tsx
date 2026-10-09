@@ -6,7 +6,8 @@ export default function Projects() {
     {
       title: "coucou",
       description: "My fork of a tiny notch companion that keeps an eye on your coding agents",
-      link: "https://github.com/PythonTilk/coucou"
+      link: "https://github.com/PythonTilk/coucou",
+      logo: "/coucou-logo.png"
     },
     {
       title: "Notevault",
@@ -17,7 +18,8 @@ export default function Projects() {
     {
       title: "Galaxy",
       description: "A website that simulates a galaxy and our solar system in the browser",
-      link: "https://pythontilk.github.io/Galaxy/"
+      link: "https://pythontilk.github.io/Galaxy/",
+      logo: "/galaxy-logo.svg"
     },
     {
       title: "Valentines Day",
