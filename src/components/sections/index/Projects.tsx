@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Projects() {
-  const projects: { title: string, description: string, link: string, image?: string }[] = [
+  const projects: { title: string, description: string, link: string, image?: string, logo?: string }[] = [
     {
       title: "coucou",
       description: "My fork of a tiny notch companion that keeps an eye on your coding agents",
@@ -11,23 +11,25 @@ export default function Projects() {
     {
       title: "Notevault",
       description: "A note-sharing website that grew out of a school project",
-      link: "https://github.com/PythonTilk/notevault-svelte"
+      link: "https://github.com/PythonTilk/notevault-svelte",
+      logo: "/notevault-logo.svg"
     },
     {
       title: "Galaxy",
       description: "A website that simulates a galaxy and our solar system in the browser",
-      link: "https://github.com/PythonTilk/Galaxy"
+      link: "https://pythontilk.github.io/Galaxy/"
     },
     {
       title: "Valentines Day",
       description: "A simple site to ask someone out for Valentine's Day",
-      link: "https://github.com/PythonTilk/Valintines-day-askout-webiste",
+      link: "https://pythontilk.github.io/Valintines-day-askout-webiste/",
       image: "/cats-cat-with-flower.png"
     },
     {
       title: "anarlog",
       description: "Open source AI notepad for meetings, where I worked on Linux support",
-      link: "https://github.com/fastrepl/anarlog"
+      link: "https://github.com/fastrepl/anarlog",
+      logo: "/anarlog-logo.png"
     }
   ];
 
@@ -56,7 +58,11 @@ export default function Projects() {
               <Link href={project.link} target="_blank" className="p-4 flex flex-col bg-gradient-to-br from-primary to-secondary rounded-lg border-1 border-accent shadow-2xl shadow-background hover:scale-105 transition-transform duration-300 w-full">
                 {project.image
                   ? <img alt="" draggable={false} className="rounded-lg border-1 border-accent mb-4 w-full h-48 object-cover" src={project.image} />
-                  : <div className="rounded-lg border-1 border-accent mb-4 w-full h-48 flex items-center justify-center bg-gradient-to-tr from-secondary to-primary font-bold text-5xl text-neutral-400">{project.title}</div>
+                  : <div className="rounded-lg border-1 border-accent mb-4 w-full h-48 flex items-center justify-center bg-gradient-to-tr from-secondary to-primary font-bold text-5xl text-neutral-400">
+                      {project.logo
+                        ? <img alt="" draggable={false} className="h-28 w-28 object-contain" src={project.logo} />
+                        : project.title}
+                    </div>
                 }
                 <h2 className="text-center font-semibold text-3xl">
                   {project.title}
