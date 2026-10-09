@@ -2,30 +2,32 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Projects() {
-  const projects = [
+  const projects: { title: string, description: string, link: string, image?: string }[] = [
     {
-      title: "Private Bio",
-      description: "My Personal Bio on e-z.bio",
-      link: "https://e-z.bio/tilk",
-      image: "/e-zbanner.png"
+      title: "coucou",
+      description: "My fork of a tiny notch companion that keeps an eye on your coding agents",
+      link: "https://github.com/PythonTilk/coucou"
     },
     {
-      title: "Highfactory",
-      description: "A Cheap Worldwide Game Hosting Service(offline)",
-      link: "https://www.youtube.com/shorts/YcsuyjKOVjU",
-      image: "/prismicon.png"
+      title: "Notevault",
+      description: "A note-sharing website that grew out of a school project",
+      link: "https://github.com/PythonTilk/notevault-svelte"
     },
     {
-      title: "Wichteln",
-      description: "A custom Name selector for a Teen-Group of my Church (private use)",
-      link: "https://teenkreis.xyz",
-      image: "/Teenkreis.jpg"
+      title: "Galaxy",
+      description: "A website that simulates a galaxy and our solar system in the browser",
+      link: "https://github.com/PythonTilk/Galaxy"
     },
     {
       title: "Valentines Day",
-      description: "A simple site to ask someone out for valentines day(offline)",
-      link: "https://www.youtube.com/shorts/YcsuyjKOVjU",
+      description: "A simple site to ask someone out for Valentine's Day",
+      link: "https://github.com/PythonTilk/Valintines-day-askout-webiste",
       image: "/cats-cat-with-flower.png"
+    },
+    {
+      title: "anarlog",
+      description: "Open source AI notepad for meetings, where I worked on Linux support",
+      link: "https://github.com/fastrepl/anarlog"
     }
   ];
 
@@ -52,7 +54,10 @@ export default function Projects() {
               viewport={{ amount: 0.1, once: true }}
             >
               <Link href={project.link} target="_blank" className="p-4 flex flex-col bg-gradient-to-br from-primary to-secondary rounded-lg border-1 border-accent shadow-2xl shadow-background hover:scale-105 transition-transform duration-300 w-full">
-                <img alt="" draggable={false} className="rounded-lg border-1 border-accent mb-4 w-full h-48 object-cover" src={project.image} />
+                {project.image
+                  ? <img alt="" draggable={false} className="rounded-lg border-1 border-accent mb-4 w-full h-48 object-cover" src={project.image} />
+                  : <div className="rounded-lg border-1 border-accent mb-4 w-full h-48 flex items-center justify-center bg-gradient-to-tr from-secondary to-primary font-bold text-5xl text-neutral-400">{project.title}</div>
+                }
                 <h2 className="text-center font-semibold text-3xl">
                   {project.title}
                 </h2>
